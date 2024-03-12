@@ -10,7 +10,7 @@ console.log(resultMessage);
 
 let nameUser = "Maurício"
 let message = `Hi, Mr. ${nameUser}!
-          How are you?
-          I hope you are fine.
-          Thank you for your attention.`
+How are you?
+I hope you are fine.
+Thank you for your attention.`
 console.log(message);
