@@ -15,8 +15,13 @@ let percorrer = function(item) {
 sequence.forEach(percorrer);
 
 let newValues = [];
-let multiplicarpor2 = function(item) {
-    newValues.push(item*2);
-}
-sequence.forEach(multiplicarpor2);
+// let multiplicarpor2 = function(item) {
+//     newValues.push(item*2);
+// }
+// sequence.forEach(multiplicarpor2);
+// console.log(newValues);
+
+sequence.forEach(el => {
+    newValues.push(el*2);
+});
 console.log(newValues);

@@ -1,5 +1,6 @@
 /**
- * Crie um vetor chamado estoque que armazene informações sobre produtos disponíveis em uma loja. Cada produto deve ter as propriedades nome, preco e quantidade. Em seguida, crie uma função chamada verificarEstoque que recebe o nome de um produto como parâmetro e retorna uma mensagem informando se o produto está disponível em estoque e quantas unidades estão disponíveis.
+ * Crie um vetor chamado estoque que armazene informações sobre produtos disponíveis em uma loja. 
+ * Cada produto deve ter as propriedades nome, preco e quantidade. Em seguida, crie uma função chamada verificarEstoque que recebe o nome de um produto como parâmetro e retorna uma mensagem informando se o produto está disponível em estoque e quantas unidades estão disponíveis.
  **/
 prompt = require('prompt-sync')();
 
