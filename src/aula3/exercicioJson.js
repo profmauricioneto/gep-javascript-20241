@@ -10,3 +10,32 @@ recebe um array de objetos JSON de tarefas como parâmetro e
 utiliza manipulação de JSON para criar um novo array contendo
 os títulos das tarefas que estão marcadas como concluídas.
 */
+
+const tarefas = require('../data/json/tasks.json');
+
+function main() {
+    let titulos = obterTitulosTarefasConcluidas(tarefas);
+    console.log(titulos);
+}
+
+function obterTitulosTarefasConcluidas(tarefas) {
+    let array_data = [];
+    for (let i = 0; i < tarefas.length; i++) {
+        array_data.push(tarefas[i])
+    }
+
+    let titulos_concluidos = array_data.filter(estadoTrue).map(({titulo}) => titulo);
+
+    // let tarefas_concluidas = array_data.filter((tarefa) => {
+    //     return tarefa.estado === true;
+    // });
+
+    // let titulos_conluidos = tarefas_concluidas.map(({titulo}) => titulo);
+    return titulos_concluidos;
+}
+
+function estadoTrue(tarefa) {
+    return tarefa.estado === true;
+}
+
+main()
