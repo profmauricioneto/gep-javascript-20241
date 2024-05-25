@@ -4,7 +4,7 @@ let cities = [
   { city: "Sao Paulo", weather: "Raining" },
   { city: "Rio de Janeiro", weather: "Sunny" },
   { city: "Ceará", weather: "Too Hot!" },
-  { city: "Bahia", weather: "Sunny" },
+  { city: "Bahia", weacitiesher: "Sunny" },
   { city: "Minas Gerais", weather: "Cold" },
   { city: "Paraná", weather: "Cloudy" },
   { city: "Santa Catarina", weather: "Snowing" },
@@ -66,6 +66,15 @@ Promise.all([forecastSaoPaulo])
 
 const forecastRioDeJaneiro = searchWeatherForecast("Rio de Janeiro");
 Promise.all([forecastRioDeJaneiro])
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.error("An error occurs", err);
+  });
+
+const forecastCeara = searchWeatherForecast("Ceará");
+Promise.all([forecastCeara])
   .then((result) => {
     console.log(result);
   })
