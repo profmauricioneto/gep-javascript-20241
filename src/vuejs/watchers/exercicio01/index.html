@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .InvalidInput {
+            color: red;
+        }
+        .ValidInput {
+            color: green;
+        }
+    </style>
+    <title>Email Validator</title>
+</head>
+<body>
+    <header>
+        <h2>Email Validator</h2>
+        <p>This app see if the email is valid or not!</p>
+    </header>
+
+    <div id="app">
+        <p>Write your e-mail</p>
+        <input type="email" v-model="emailAddress" required />
+        <p v-bind:class="emailValid">{{ message }}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            emailAddress: '',
+            message: '',
+            emailValid: 'InvalidInput',
+          };
+        },
+        watch: {
+            emailAddress(newEmail, oldEmail) {
+                if (!newEmail.includes('@') && !newEmail.includes('.')) {
+                    this.message = "Invalid Email Address!";
+                    this.emailValid = "InvalidInput";
+                } else if (!oldEmail.includes('@') && !newEmail.includes('@')) {
+                    this.message = "Almost good! Missing something yet!";
+                    this.emailValid = "InvalidInput";
+                } else if (!oldEmail.includes('.') && !newEmail.includes('.')) {
+                    this.message = "Almost good! Missing something yet!";
+                    this.emailValid = "InvalidInput";
+                } else {
+                    this.message = "Valid Email Address!";
+                    this.emailValid = "ValidInput";
+                }
+            }
+        },
+      });
+      app.mount("#app");
+      </script>
+</body>
+</html>

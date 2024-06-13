@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliando a Idade</title>
+</head>
+<body>
+    <div id="app">
+        <h2>Qual a sua idade?</h2>
+        <input type="range" min="0" max="120" step="1" v-model="age" required />
+        <p>Idade: {{ age }}</p>
+        <p><b>Voce é {{ estagioIdade }}</b></p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            age: 0,
+            estagioIdade: null
+          };
+        },
+        watch: {
+            age(myAge) {
+                if (myAge < 18) {
+                    this.estagioIdade = "Menor de idade";
+                } else if (myAge >= 18 && myAge < 65) {
+                    this.estagioIdade = "Adulto";
+                } else {
+                    this.estagioIdade = "Idoso";
+                }
+            }
+        },
+      });
+      app.mount("#app");
+      </script>
+</body>
+</html>

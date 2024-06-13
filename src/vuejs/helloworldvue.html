@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Minha Primera Pagina com Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">{{message}}</div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: "Minha primeira mensagem com Vue!",
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

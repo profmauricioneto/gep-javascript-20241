@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting by VueJs</title>
+    <style>
+        #app {
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>Hello, Mr(s) {{name}}</h2>
+        <p v-if="hora < 12">Good Morning</p>
+        <p v-else-if="hora >= 12 || hora < 18">Good Afternoon</p>
+        <p v-else>Good Night</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    name: 'Mauricio Neto',
+                    hora: new Date().getHours()
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+</body>
+</html>

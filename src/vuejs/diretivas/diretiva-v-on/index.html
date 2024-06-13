@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Counter!</title>
+</head>
+<body>
+    <header>
+        <h2>Welcome to my Counter</h2>
+        <p>This app is a counter in VueJs</p>
+    </header>
+
+    <div id="app">
+        <p>{{"Counter: " + count}}</p>
+        <button v-on:click="count++">Increase Button</button>
+        <br/>
+        <button v-on:click="count--">Decrease Button</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            count: 0
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+</body>
+</html>

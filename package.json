@@ -2,8 +2,9 @@
   "name": "gep-javascript-20241",
   "version": "1.0.0",
   "description": "Repositório dedicado ao Grupo de Estudos e Pesquisa (GEP) de JavaScript do semestre 2024.1",
-  "main": "index.js",
+  "main": "src/node/exercicio01/app.js",
   "scripts": {
+    "start": "nodemon src/node/exercicio01/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +20,12 @@
   "homepage": "https://github.com/profmauricioneto/gep-javascript-20241#readme",
   "dependencies": {
     "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
     "node-fetch": "^3.3.2",
     "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
   }
 }

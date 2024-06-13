@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Card Game!</title>
+  </head>
+  <body>
+    <header>
+      <h2>My Card Game Site!</h2>
+      <p>This is an example of card game site using vuejs</p>
+    </header>
+    <div id="app">
+      <div class="card" v-bind:class="vueClass">
+        <h3>Card 01</h3>
+        <p>Card 01 content</p>
+      </div>
+      <div class="card" v-bind:class="vueClass" v-show="hideDiv">
+        <h3>Card 02</h3>
+        <p>Card 02 content</p>
+      </div>
+      <div class="card" v-bind:class="vueClass" v-show="hideDiv">
+        <h3>Card 03</h3>
+        <p>Card 03 content</p>
+      </div>
+      <div class="card" v-bind:class="vueClass">
+        <h3>Card 04</h3>
+        <p>Card 04 content</p>
+      </div>
+      <div class="card" v-bind:class="vueClass">
+        <h3>Card 05</h3>
+        <p>Card 05 content</p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            vueClass: "vueColorBG",
+            hideDiv: false,
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passing Arguments in Vue</title>
+</head>
+<body>
+    <div id="app">
+        <p>Choose a Programming Language</p>
+        <button v-on:click="langPhrase('javascript')">JavaScript</button>
+        <button v-on:click="langPhrase('python')">Python</button>
+        <button v-on:click="langPhrase('java')">Java</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+     data() {
+        return {
+            hello: "I love Programming in ",
+        }
+     },
+        methods: {
+            langPhrase(lang) {
+                alert(this.hello + lang);
+            },
+        },
+      });
+      app.mount("#app");
+    </script>
+</body>
+</html>

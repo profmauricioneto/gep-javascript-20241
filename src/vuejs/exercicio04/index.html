@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas Simples</title>
+</head>
+<body>
+    <header>
+        <h2>Lista de Tarefas - Complexidade Simples</h2>
+    </header>
+    <div id="app">
+        <h3>Lista de Tarefas</h3>
+        <input type="text" v-model="newtask" v-on:keyup.enter="addTask" placeholder="Digite sua tarefa"/>
+        <ul>
+            <li v-for="task in tasks">{{ task }}</li>
+        </ul>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            newtask: "",
+            tasks: []
+          };
+        },
+        methods: {
+            addTask(event) {
+                if(this.newtask.trim() != "") {
+                    this.tasks.push(this.newtask);
+                    this.newtask = "";
+                }
+            }
+        },
+      });
+      app.mount("#app");
+    </script>
+</body>
+</html>

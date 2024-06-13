@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Minha Primera Pagina com Vue</title> 
+</head>
+<body>
+  <div id="app">
+    <h2>{{message}}</h2>
+    {{ "Hello Mr(s): " + name }} 
+    <br/>
+    {{"Voce nasceu em: " + (new Date().getFullYear() - age) + " e tem " + age + "  anos"}}
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "Bem vindo ao Vue.js",
+          name: "Maurcio Moreira neto",
+          age: 33,
+        }
+      }
+    })
+    app.mount('#app');
+  </script>
+</body>
+</html>

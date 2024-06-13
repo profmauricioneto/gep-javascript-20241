@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mouse Coordinates</title>
+</head>
+<body >
+    <header>
+        <h2>Mouse Coordinates</h2>
+        <p>This app show the mouse coordinates in the Paragraph</p>
+    </header>
+    <div id="app">
+        <p v-on:mousemove="showCoordinate" v-bind:style="{backgroundColor: 'hsl('+ coordX +', 70%, 70%)'}" >
+            Mouse Coordinates: x: {{ coordX }} - y: {{ coordY }}
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            coordX: 0,
+            coordY: 0
+          };
+        },
+        methods: {
+            showCoordinate(event) {
+                this.coordX = event.offsetX;
+                this.coordY = event.offsetY;
+            }
+        },
+      });
+      app.mount("#app");
+    </script>
+</body>
+</html>

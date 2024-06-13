@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>My Ingredients List</title>
+  </head>
+  <body>
+    <header>
+      <h2>My Ingredients List</h2>
+      <p>This app create my ingredient list</p>
+    </header>
+    <div id="app">
+      <form v-on:submit.prevent="addIngredient">
+        <span>name</span>
+        <input type="text" v-model="name" placeholder="name of ingriedient" />
+        <br/>
+        <span>quantity</span>
+        <input type="number" v-model="quantity" value="0"/>
+        <br/>
+        <div id="essencial">
+            <span>Essencial</span>
+            <input type="checkbox" v-model="essencial">
+        </div>
+        <button type="submit">add ingredient</button>
+      </form>
+
+      <h3>Ingredients List!</h3>
+      <ul>
+        <li v-for="(item, index) in ingredients" :key="index" v-bind:class="{essencialClass: item.essencial}"> {{ item.name }} - quantity: {{ item.quantity }}</li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            name: "",
+            quantity: 0,
+            essencial: false,
+            ingredients: []
+          };
+        },
+        methods: {
+            addIngredient() {
+                let ingredient = {
+                    name: this.name,
+                    quantity: this.quantity,
+                    essencial: this.essencial
+                }
+                this.ingredients.push(ingredient)
+                this.name = null
+                this.quantity = null,
+                this.essencial = false
+            }
+        },
+      });
+      app.mount("#app");
+      </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming Languages</title>
+    <style>
+      #app {
+        display: flex;
+        justify-content: center;
+        align-items:     center;
+        flex-direction: column;
+      }
+
+      figure {
+        margin: 20px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img {
+        width: 150px;
+        height: 150px;
+      }
+
+      figcaption {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Programming Languages</h2>
+      <p>Here are some programming languages that I use</p>
+    </header>
+    <div id="app">
+      <div>
+        <figure v-for="lang in languages">
+          <img v-bind:src="lang.url" />
+          <figcaption>{{lang.name}}</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            languages: [
+              { name: "JavaScript", url: "images/js.png" },
+              { name: "Python", url: "images/python.png" },
+              { name: "Java", url: "images/java.png" },
+              { name: "C++", url: "images/cpp.png" },
+            ],
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
