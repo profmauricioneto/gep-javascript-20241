@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example of v-for to programing language</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Programming Languages</h1>
+        <ul>
+            <li v-for="language in languages">{{language}}</li>
+        </ul>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+          data() {
+            return {
+              languages: ["Python", "JavaScript", "Java", "C#", "C++", "Ruby", "PHP"],
+            };
+          },
+        });
+        app.mount("#app");
+      </script>
+</body>
+</html>
